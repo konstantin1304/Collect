@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Collections
 {
     
-    class MyArrayIntList<T> : ICollection<T>, IList<T>, IEnumerator<T> where T : IEquatable<T>
+        public class MyArrayList<T> : ICollection<T>, IList<T>, IEnumerator<T> where T : IEquatable<T>
     {
         #region filds
         private T[] arr;
@@ -15,10 +15,10 @@ namespace Collections
         #region .ctors
 
         /// <summary>
-        /// Constructor MyArrayIntList
+        /// Constructor MyArrayList
         /// </summary>
         /// <param name="capacity">Initial capecity of arrayList</param>
-        public MyArrayIntList(int capacity = 10)
+        public MyArrayList(int capacity = 10)
         {
             arr = new T[capacity];
         }
@@ -150,8 +150,13 @@ namespace Collections
 
         public bool MoveNext()
         {
+            
+            if (currentIndex == count-1)
+            {
+                return false;
+            }
             ++currentIndex;
-            return currentIndex <= count;
+            return true;
         }
         public void Reset()
         {

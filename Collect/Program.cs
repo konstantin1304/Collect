@@ -10,7 +10,7 @@ namespace Collections
     {
         static void Main(string[] args)
         {
-            MyArrayIntList<int> L = new MyArrayIntList<int>();
+            MyArrayList<int> L = new MyArrayList<int>();
 
             for (int i = 0; i < 10; i++)
             {
